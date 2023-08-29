@@ -54,17 +54,19 @@ const basket = [
 ]
 
 function result(basket){ //подсчет итоговой суммы и итогового количества товаров
-    totalAmount = 0
-    totalSumm = 0
+    res = {
+        totalAmount: 0,
+        totalSumm: 0  
+    }
     for (let i = 0;i < basket.length; i++){
-        totalAmount += basket[i].amount
+        res.totalAmount += basket[i].amount
         for (let n = 0; n < goods.length; n++){
             if (basket[i].id == goods[n].id){
-                totalSumm += goods[n].price * basket[i].amount
+                res.totalSumm += goods[n].price * basket[i].amount
             }
         }
     }
-    return totalAmount, totalSumm
+    return res
 }
 function add(add_id, add_amount, basket){ // добавление в корзину товара: add_id - айди нового товара; add_amount - количество товара
     basket.push({id: add_id, amount: add_amount});

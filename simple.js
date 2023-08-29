@@ -1,6 +1,6 @@
 function simple(n) {
     const simpleL = [2, 3];
-    for (let i = 4; i <= n; i++) {
+    for (let i = 4; simpleL.length - 2 < n - 2; i++) {
         let flag = 1;
         for (let v = 2; v <= i-1; v++){
             if (i % v == 0) {
@@ -12,6 +12,6 @@ function simple(n) {
             simpleL.push(i);
         }
     }
-    return simpleL.length;
+    return simpleL;
 }
 console.log(simple(process.argv[2]));
